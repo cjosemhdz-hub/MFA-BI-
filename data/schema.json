@@ -1,0 +1,39 @@
+{
+  "balanza": [
+    "Cuenta",
+    "Nombre Cuenta",
+    "Saldo Inicial",
+    "Cargo",
+    "Abono",
+    "Saldo Final"
+  ],
+  "bancos": [
+    "Fecha",
+    "Banco",
+    "Concepto",
+    "Cargo",
+    "Abono",
+    "Saldo",
+    "Clasificación"
+  ],
+  "clientes": [
+    "Cliente",
+    "Factura",
+    "Fecha",
+    "Vencimiento",
+    "Importe",
+    "Cobrado",
+    "Pendiente",
+    "Estatus"
+  ],
+  "proveedores": [
+    "Proveedor",
+    "Factura",
+    "Fecha",
+    "Vencimiento",
+    "Importe",
+    "Pagado",
+    "Pendiente",
+    "Estatus"
+  ]
+}
