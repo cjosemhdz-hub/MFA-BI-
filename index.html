@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="MFA Business Intelligence - Centro de Dirección Empresarial." />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<title>MFA Business Intelligence | Prototipo Ejecutivo v2.7</title>
+<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">MFA</div>
+      <div><h1>Business Intelligence</h1><small>Centro de Dirección Empresarial</small></div>
+    </div>
+    <div class="nav" id="nav">
+      <button class="active" data-section="control">🏠 Centro de Control</button>
+      <button data-section="carga">⬆️ Carga de Datos</button>
+      <button data-section="rentabilidad">📊 Resultado financiero</button>
+      <button data-section="efectivo">💵 Generación de efectivo</button>
+      <button data-section="tesoreria">🏦 Liquidez y tesorería</button>
+      <button data-section="cobranza">📋 Cobranza inteligente</button>
+      <button data-section="integridad">🔍 Integridad contable</button>
+      <button data-section="riesgos">⚠️ Riesgos y oportunidades</button>
+      <button data-section="arquitectura">🧩 Arquitectura MFA</button>
+    </div>
+    <div class="side-footer">
+      <b>Prototipo ejecutivo v2.7</b><br>
+      Diseño corporativo sobrio. Datos de prueba anonimizados para validación ejecutiva.
+    </div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="title">
+        <h2 id="pageTitle">Centro de Control Empresarial™</h2>
+        <p><span id="topbarCompany">Empresa demo</span> · Periodo: <span id="topbarPeriod">Mayo 2026</span> · Última actualización: 10 junio 2026</p>
+      </div>
+      <div class="actions">
+        <div class="pill">Vista: Ejecutivo</div>
+        <div class="pill">Motor: Diccionario MFA</div>
+        <button class="btn secondary" onclick="window.print()">Exportar vista</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-field">
+        <label>Empresa</label>
+        <select id="filterCompany">
+          <option>Empresa demo</option>
+          <option>Cliente 001</option>
+          <option>Cliente 002</option>
+          <option>Cliente 003</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Ejercicio</label>
+        <select id="filterYear">
+          <option>2026</option>
+          <option>2025</option>
+          <option>2024</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Mes</label>
+        <select id="filterMonth">
+          <option value="may">Mayo</option>
+          <option value="apr">Abril</option>
+          <option value="mar">Marzo</option>
+          <option value="feb">Febrero</option>
+          <option value="jan">Enero</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Vista</label>
+        <select id="filterView">
+          <option value="monthly">Mensual</option>
+          <option value="ytd">Acumulado</option>
+          <option value="custom">Personalizado</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label>Comparativo</label>
+        <select id="filterCompare">
+          <option value="prev">Mes anterior</option>
+          <option value="budget">Presupuesto</option>
+          <option value="lastyear">Año anterior</option>
+          <option value="none">Sin comparación</option>
+        </select>
+      </div>
+      <button class="apply-filter" id="applyFilter">Actualizar vista</button>
+      <div class="filter-field period-custom" id="customPeriod">
+        <div>
+          <label>Desde</label>
+          <input type="month" id="dateFrom" value="2026-01">
+        </div>
+        <div>
+          <label>Hasta</label>
+          <input type="month" id="dateTo" value="2026-05">
+        </div>
+      </div>
+    </div>
+    <div class="context-strip">
+      <div class="context-chip">Empresa: <b id="ctxCompany">Empresa demo</b></div>
+      <div class="context-chip">Periodo: <b id="ctxPeriod">Mayo 2026</b></div>
+      <div class="context-chip">Vista: <b id="ctxView">Mensual</b></div>
+      <div class="context-chip">Comparativo: <b id="ctxCompare">Mes anterior</b></div>
+      <div class="context-chip">Datos: <b>Demo / Mayo</b></div>
+    </div>
+
+
+    <section id="control" class="section active">
+      <div class="hero">
+        <div class="card score-card">
+          <div class="score-wrap">
+            <div class="score-circle"><div class="score-inner"><div><strong id="scoreEmp">65</strong><br><span>Índice MFA</span></div></div></div>
+            <div class="score-text">
+              <span class="status warn">Atención ejecutiva</span>
+              <h3>Empresa rentable, pero con presión fuerte de efectivo.</h3>
+              <p>La utilidad contable es positiva; sin embargo, la conversión de ventas a efectivo es baja y el flujo bancario del periodo es negativo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Las 4 preguntas directivas</h3><p>Lectura inmediata para dirección.</p></div></div>
+          <div class="question-grid">
+            <div class="question"><b>¿Estoy ganando dinero?</b><span class="status ok">Sí, rentable</span><br><span>Margen neto contable elevado.</span></div>
+            <div class="question"><b>¿Estoy generando efectivo?</b><span class="status risk">No suficiente</span><br><span>Flujo bancario negativo.</span></div>
+            <div class="question"><b>¿Me están pagando?</b><span class="status risk">Atención</span><br><span>Conversión baja vs facturado.</span></div>
+            <div class="question"><b>¿Tengo riesgos?</b><span class="status warn">Sí</span><br><span>Cartera, liquidez o clasificación.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid kpi-grid">
+        <div class="card"><div class="kpi-label">Liquidez disponible</div><div class="kpi-value" data-money="liquidity_cash"></div><div class="kpi-foot"><div class="kpi-note">Bancos y liquidez inmediata</div><span class="delta up" data-delta="liquidity_cash">↑</span></div></div>
+        <div class="card"><div class="kpi-label">Razón circulante</div><div class="kpi-value"><span data-number="current_ratio" data-suffix="x"></span></div><div class="kpi-foot"><div class="kpi-note">Evaluar uso del capital</div><span class="delta flat" data-delta="current_ratio">—</span></div></div>
+        <div class="card"><div class="kpi-label">Margen neto</div><div class="kpi-value"><span data-percent="margin_net"></span></div><div class="kpi-foot"><div class="kpi-note">Resultado contable</div><span class="delta up" data-delta="margin_net">↑</span></div></div>
+        <div class="card"><div class="kpi-label">Conversión de efectivo</div><div class="kpi-value"><span data-percent="cash_conversion"></span></div><div class="kpi-foot"><div class="kpi-note">Cobrado / facturado</div><span class="delta down" data-delta="cash_conversion">↓</span></div></div>
+        <div class="card"><div class="kpi-label">Flujo bancario</div><div class="kpi-value" data-money="net_cash"></div><div class="kpi-foot"><div class="kpi-note">Entradas menos salidas</div><span class="delta down" data-delta="net_cash">↓</span></div></div>
+      </div>
+      <div class="split">
+        <div class="card">
+          <div class="panel-title"><div><h3>Hallazgos automáticos</h3><p>Lectura gerencial generada por el motor MFA.</p></div><span class="status warn">4 observaciones</span></div>
+          <div class="insights" id="autoInsights">
+            <div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">!</div><div><h4>La operación genera utilidad, pero no efectivo suficiente.</h4><p>El Estado de Resultados muestra utilidad; sin embargo, la entrada bancaria del periodo representa una proporción baja frente a lo facturado.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--yellow-soft);color:var(--yellow)">↻</div><div><h4>La cartera de clientes concentra una parte relevante del activo circulante.</h4><p>La cobranza debe revisarse por antigüedad, concentración y recuperación efectiva para evitar presión de tesorería.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--orange-soft);color:var(--orange)">◆</div><div><h4>Liquidez contable elevada.</h4><p>La razón circulante supera el umbral superior. Puede existir capital ocioso, saldos por depurar o exceso aparente por cartera no recuperada.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--emerald-soft);color:var(--emerald)">✓</div><div><h4>El diccionario MFA ya permite separar Balance, Resultado y Flujo.</h4><p>La estructura está preparada para alimentar un dashboard ejecutivo y un modelo Power BI posterior.</p></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Lectura por motor</h3><p>Semáforo ejecutivo.</p></div></div>
+          <table class="table">
+            <tr><th>Motor</th><th>Estado</th><th>Lectura</th></tr>
+            <tr><td>Liquidez</td><td><span class="status warn">Exceso</span></td><td>Revisar composición</td></tr>
+            <tr><td>Rentabilidad</td><td><span class="status ok">Alta</span></td><td>Margen positivo</td></tr>
+            <tr><td>Flujo</td><td><span class="status risk">Crítico</span></td><td>Salida neta</td></tr>
+            <tr><td>Cobranza</td><td><span class="status risk">Atención</span></td><td>Baja conversión</td></tr>
+            <tr><td>Integridad</td><td><span class="status warn">Validar</span></td><td>Revisión contable</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="carga" class="section">
+      <div class="card" style="margin-bottom:18px;border-top:5px solid var(--emerald)">
+        <div class="panel-title">
+          <div>
+            <h3>Carga de Datos MFA™</h3>
+            <p>Centro de importación para alimentar el modelo contable, bancario y operativo.</p>
+          </div>
+          <span class="status info">Modo prototipo</span>
+        </div>
+        <div class="process-flow">
+          <div class="process-step"><div class="num">1</div><b>Cargar diccionario</b><small>Define la clasificación contable, KPI, motor MFA y naturaleza.</small></div>
+          <div class="process-step"><div class="num">2</div><b>Cargar balanza</b><small>Importa saldos iniciales, movimientos y saldos finales del periodo.</small></div>
+          <div class="process-step"><div class="num">3</div><b>Cargar bancos</b><small>Integra entradas, salidas, saldos y clasificación de flujo.</small></div>
+          <div class="process-step"><div class="num">4</div><b>Cargar auxiliares</b><small>Clientes, proveedores, vencimientos, cobros y pagos programados.</small></div>
+          <div class="process-step"><div class="num">5</div><b>Procesar diagnóstico</b><small>Genera estados financieros, KPIs, alertas y hallazgos automáticos.</small></div>
+        </div>
+      </div>
+
+      <div class="upload-grid">
+        <div class="upload-card">
+          <div class="upload-head"><div><h3>Diccionario MFA</h3><p>Se carga una vez y se actualiza cuando cambie la metodología.</p></div><div class="upload-icon">🧩</div></div>
+          <div class="dropzone"><b>Arrastra archivo .xlsx/.xlsm</b>Diccionario de cuentas y motores MFA</div>
+          <div class="schema-list">
+            <div class="schema-item"><span>Estado financiero</span><span>Requerido</span></div>
+            <div class="schema-item"><span>Grupo / Subgrupo</span><span>Requerido</span></div>
+            <div class="schema-item"><span>KPI / Motor MFA</span><span>Requerido</span></div>
+          </div>
+        </div>
+        <div class="upload-card">
+          <div class="upload-head"><div><h3>Balanza</h3><p>Base contable para Balance, Resultado e indicadores financieros.</p></div><div class="upload-icon">📚</div></div>
+          <div class="dropzone"><b>Arrastra balanza del mes</b>Excel exportado de CONTPAQi, COI u otro ERP</div>
+          <div class="schema-list">
+            <div class="schema-item"><span>Cuenta / Nombre</span><span>Requerido</span></div>
+            <div class="schema-item"><span>Saldo inicial</span><span>Requerido</span></div>
+            <div class="schema-item"><span>Cargo / Abono / Saldo final</span><span>Requerido</span></div>
+          </div>
+        </div>
+        <div class="upload-card">
+          <div class="upload-head"><div><h3>Movimientos bancarios</h3><p>Motor de tesorería y generación de efectivo.</p></div><div class="upload-icon">🏦</div></div>
+          <div class="dropzone"><b>Arrastra estado bancario</b>Excel/CSV con entradas, salidas y saldo</div>
+          <div class="schema-list">
+            <div class="schema-item"><span>Fecha / Banco</span><span>Requerido</span></div>
+            <div class="schema-item"><span>Concepto</span><span>Requerido</span></div>
+            <div class="schema-item"><span>Cargo / Abono / Saldo</span><span>Requerido</span></div>
+          </div>
+        </div>
+        <div class="upload-card">
+          <div class="upload-head"><div><h3>Auxiliares</h3><p>Clientes, proveedores, vencimientos y programación.</p></div><div class="upload-icon">📋</div></div>
+          <div class="dropzone"><b>Arrastra CxC / CxP</b>Opcional para análisis avanzado</div>
+          <div class="schema-list">
+            <div class="schema-item"><span>Cliente / Proveedor</span><span>Opcional</span></div>
+            <div class="schema-item"><span>Factura / Vencimiento</span><span>Opcional</span></div>
+            <div class="schema-item"><span>Pendiente / Pagado</span><span>Opcional</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="card">
+          <div class="panel-title"><div><h3>Validaciones al cargar</h3><p>Controles automáticos antes del dashboard.</p></div><span class="status warn">Preprocesamiento</span></div>
+          <div class="validation-row"><b>Cuadratura de balanza</b><span>Debe validar cargos, abonos y saldos.</span><span class="status ok">Automático</span></div>
+          <div class="validation-row"><b>Clasificación MFA completa</b><span>Todas las cuentas deben mapearse al diccionario.</span><span class="status warn">Revisión</span></div>
+          <div class="validation-row"><b>Naturaleza de saldos</b><span>Detecta activos acreedores, pasivos deudores y resultados invertidos.</span><span class="status ok">Automático</span></div>
+          <div class="validation-row"><b>Conciliación bancos vs balanza</b><span>Compara liquidez contable contra movimientos bancarios.</span><span class="status warn">Requiere bancos</span></div>
+          <div class="validation-row"><b>IVA, clientes y proveedores</b><span>Validaciones fiscales y de saldos operativos.</span><span class="status warn">Fase 2</span></div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Cómo alimenta el sistema</h3><p>Relación entre datos, motor MFA y salida ejecutiva.</p></div></div>
+          <div class="data-map">
+            <div class="map-box"><h4>Entrada</h4><ul><li>Diccionario MFA</li><li>Balanza mensual</li><li>Movimientos bancarios</li><li>Auxiliares CxC/CxP</li></ul></div>
+            <div class="map-box"><h4>Motor</h4><ul><li>Clasificación contable</li><li>Matriz de KPIs</li><li>Reglas MFA</li><li>Validaciones de integridad</li></ul></div>
+            <div class="map-box"><h4>Salida</h4><ul><li>Centro de Control</li><li>Resultado financiero</li><li>Generación de efectivo</li><li>Riesgos y oportunidades</li></ul></div>
+          </div>
+          <div class="divider"></div>
+          <div class="focus-box"><b>Nota de arquitectura:</b> En una versión funcional, esta pantalla puede construirse con JavaScript, Power Query o una aplicación web. En este prototipo se muestra la experiencia esperada antes de programar el procesamiento real.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="rentabilidad" class="section">
+      <div class="two">
+        <div class="card">
+          <div class="panel-title"><div><h3>Estado de Resultados Contable</h3><p>¿Estoy ganando dinero?</p></div><span class="status ok">Rentable</span></div>
+          <div class="statement">
+            <div class="line"><span>Ventas / ingresos del periodo</span><span data-money="income"></span></div>
+            <div class="line"><span>(-) Costo de ventas</span><span data-money="costs"></span></div>
+            <div class="line subtotal"><span>= Utilidad bruta</span><span data-money="profit_gross"></span></div>
+            <div class="line"><span>(-) Gastos operativos</span><span data-money="oper_exp"></span></div>
+            <div class="line"><span>(-) Gastos financieros netos</span><span data-money="fin_exp"></span></div>
+            <div class="line total"><span>= Utilidad neta estimada</span><span data-money="profit_net"></span></div>
+          </div>
+          <div class="footer-note">Resultado calculado con movimientos del periodo. El objetivo es mostrar rentabilidad contable, no disponibilidad de efectivo.</div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Márgenes ejecutivos</h3><p>Lectura de rentabilidad.</p></div></div>
+          <div class="bar-row"><div class="bar-label">Margen bruto</div><div class="bar-track"><div class="bar" style="width:85%"></div></div><div class="bar-value"><span data-percent="margin_gross"></span></div></div>
+          <div class="bar-row"><div class="bar-label">Margen operativo</div><div class="bar-track"><div class="bar" style="width:72%"></div></div><div class="bar-value"><span data-percent="margin_oper"></span></div></div>
+          <div class="bar-row"><div class="bar-label">Margen neto</div><div class="bar-track"><div class="bar" style="width:72%"></div></div><div class="bar-value"><span data-percent="margin_net"></span></div></div>
+          <div class="divider"></div>
+          <div class="focus-box"><b>Diagnóstico MFA:</b> El resultado contable es favorable; sin embargo, esta lectura debe compararse contra el flujo real para evitar confundir utilidad con efectivo disponible.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="efectivo" class="section">
+      <div class="two">
+        <div class="card">
+          <div class="panel-title"><div><h3>Estado de Generación de Efectivo</h3><p>¿Estoy generando dinero?</p></div><span class="status risk">Flujo negativo</span></div>
+          <div class="statement">
+            <div class="line"><span>Ventas facturadas / ingresos contables</span><span data-money="income"></span></div>
+            <div class="line"><span>Entradas bancarias identificadas</span><span data-money="inflows"></span></div>
+            <div class="line"><span>Salidas bancarias identificadas</span><span data-money="outflows"></span></div>
+            <div class="line total"><span>= Flujo bancario neto</span><span data-money="net_cash"></span></div>
+          </div>
+          <div class="footer-note">Este panel separa la utilidad contable de la capacidad real de pago.</div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Conversión de ventas a efectivo</h3><p>Facturado vs cobrado en bancos.</p></div></div>
+          <div class="score-wrap" style="margin-top:8px">
+            <div class="score-circle"><div class="score-inner"><div><strong><span data-percent="cash_conversion"></span></strong><br><span>Conversión</span></div></div></div>
+            <div><span class="status risk">Riesgo de flujo</span><p style="color:var(--gray-600);line-height:1.5">La conversión bancaria es baja frente al volumen de ingresos contables del periodo. Se requiere validación de cobranza, saldos de clientes y programación de pagos.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tesoreria" class="section">
+      <div class="grid kpi-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="card"><div class="kpi-label">Bancos</div><div class="kpi-value" data-money="liquidity_cash"></div><div class="kpi-note">Saldo final clasificado como liquidez</div></div>
+        <div class="card"><div class="kpi-label">Capital de trabajo</div><div class="kpi-value" data-money="working_capital"></div><div class="kpi-note">Activo circulante - pasivo circulante</div></div>
+        <div class="card"><div class="kpi-label">Prueba ácida</div><div class="kpi-value"><span data-number="quick_ratio" data-suffix="x"></span></div><div class="kpi-note">Sin inventarios</div></div>
+        <div class="card"><div class="kpi-label">Cobertura bancaria</div><div class="kpi-value"><span data-number="coverage" data-suffix="x"></span></div><div class="kpi-note">Bancos / salidas del periodo</div></div>
+      </div>
+      <div class="split">
+        <div class="card"><div class="panel-title"><div><h3>Principales salidas bancarias</h3><p>Por categoría de flujo.</p></div></div><div id="expenseBars"></div></div>
+        <div class="card"><div class="panel-title"><div><h3>Principales entradas bancarias</h3><p>Por categoría de flujo.</p></div></div><div id="incomeBars"></div></div>
+      </div>
+    </section>
+
+    <section id="cobranza" class="section">
+      <div class="two">
+        <div class="card">
+          <div class="panel-title"><div><h3>Composición de cartera</h3><p>Clientes anonimizados para revisión externa.</p></div><span class="status warn">Concentración</span></div>
+          <div id="clientBars"></div>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Cobranza inteligente™</h3><p>Qué debe validarse con auxiliares.</p></div></div>
+          <div class="insights">
+            <div class="insight"><div class="insight-icon" style="background:var(--orange-soft);color:var(--orange)">1</div><div><h4>Antigüedad de saldos</h4><p>Separar cartera 0-30, 31-60, 61-90 y 90+ días para medir riesgo real de recuperación.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--orange-soft);color:var(--orange)">2</div><div><h4>Vigencia CFDI</h4><p>Validar que facturas pendientes estén vigentes y no canceladas.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--orange-soft);color:var(--orange)">3</div><div><h4>Concentración + morosidad</h4><p>Un cliente concentrado es riesgo crítico si paga a más de 30 días o incumple recurrentemente.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="integridad" class="section">
+      <div class="split">
+        <div class="card">
+          <div class="panel-title"><div><h3>Integridad Contable™</h3><p>Validación previa a cualquier análisis.</p></div><span class="status warn">Requiere pruebas</span></div>
+          <table class="table">
+            <tr><th>Validación</th><th>Motor</th><th>Estado</th></tr>
+            <tr><td>Naturaleza de saldos</td><td>Balanza</td><td><span class="status warn">Revisar</span></td></tr>
+            <tr><td>Clientes vs ventas vs IVA trasladado</td><td>Fiscal / cobranza</td><td><span class="status warn">Pendiente</span></td></tr>
+            <tr><td>Proveedores vs IVA acreditable</td><td>Fiscal / compras</td><td><span class="status warn">Pendiente</span></td></tr>
+            <tr><td>Depreciación / amortización</td><td>Activos fijos</td><td><span class="status ok">Detectable</span></td></tr>
+            <tr><td>Costo de ventas vs ventas</td><td>Rentabilidad</td><td><span class="status ok">Calculado</span></td></tr>
+            <tr><td>Conciliación bancaria</td><td>Tesorería</td><td><span class="status warn">Requiere auxiliar</span></td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <div class="panel-title"><div><h3>Reglas que se convertirán en alertas</h3><p>Base para automatización v2.</p></div></div>
+          <div class="insights">
+            <div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">!</div><div><h4>Activo con saldo acreedor o pasivo con saldo deudor.</h4><p>Genera alerta de naturaleza contable incorrecta.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">!</div><div><h4>IVA acreditable/pediente no conciliado.</h4><p>Riesgo fiscal y de registro incompleto.</p></div></div>
+            <div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">!</div><div><h4>Flujo proyectado menor a pagos programados.</h4><p>Riesgo de incumplimiento semanal.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="riesgos" class="section">
+      <div class="three">
+        <div class="card"><div class="panel-title"><div><h3>Riesgos críticos</h3><p>Acciones inmediatas.</p></div></div><div class="insights"><div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">1</div><div><h4>Flujo negativo</h4><p>Las entradas bancarias no cubren las salidas del periodo.</p></div></div><div class="insight"><div class="insight-icon" style="background:var(--red-soft);color:var(--red)">2</div><div><h4>Conversión baja</h4><p>La cobranza real debe auditarse contra ventas facturadas.</p></div></div></div></div>
+        <div class="card"><div class="panel-title"><div><h3>Oportunidades</h3><p>Mejoras posibles.</p></div></div><div class="insights"><div class="insight"><div class="insight-icon" style="background:var(--emerald-soft);color:var(--emerald)">1</div><div><h4>Uso de liquidez</h4><p>Evaluar inversión, reducción de pasivos o capital ocioso.</p></div></div><div class="insight"><div class="insight-icon" style="background:var(--emerald-soft);color:var(--emerald)">2</div><div><h4>Control semanal</h4><p>Integrar programación de pagos y cobros para anticipar déficit.</p></div></div></div></div>
+        <div class="card"><div class="panel-title"><div><h3>Siguiente mejor acción</h3><p>Recomendación MFA.</p></div></div><div class="focus-box"><b>Prioridad:</b> cargar auxiliar de clientes con antigüedad y vencimiento para separar utilidad contable de recuperación efectiva. Después integrar programación de pagos para proyección semanal.</div></div>
+      </div>
+    </section>
+
+    <section id="arquitectura" class="section">
+      <div class="card">
+        <div class="panel-title"><div><h3>Arquitectura del producto</h3><p>Ruta para convertir este prototipo en plataforma funcional.</p></div><span class="status ok">Visión SaaS</span></div>
+        <div class="roadmap">
+          <div class="step"><b>1. Excel motor</b><small>Balanza, diccionario, bancos y auxiliares como base de datos inicial.</small></div>
+          <div class="step"><b>2. Power Query</b><small>Importación, limpieza y clasificación automática de información.</small></div>
+          <div class="step"><b>3. Power BI</b><small>Visualización ejecutiva, filtros, drill-down y actualización dinámica.</small></div>
+          <div class="step"><b>4. Web app</b><small>Portal MFA para despachos y clientes con usuario, empresa y periodo.</small></div>
+        </div>
+        <div class="divider"></div>
+        <p style="color:var(--gray-600);line-height:1.6">Este prototipo visual define la experiencia final: corporativa, sobria, ejecutiva e interactiva. La versión productiva debe construirse en Power BI o aplicación web; Excel debe quedar como motor de carga y validación, no como interfaz principal.</p>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

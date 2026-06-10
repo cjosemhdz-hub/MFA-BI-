@@ -1,0 +1,37 @@
+{
+  "balanza": [
+    "Nivel",
+    "Cuenta",
+    "Nombre",
+    "Saldo Inicial Deudor",
+    "Saldo Inicial Acreedor",
+    "Cargo",
+    "Abono",
+    "Saldo Final Deudor",
+    "Saldo Final Acreedor"
+  ],
+  "diccionario": [
+    "Nivel",
+    "Cuenta",
+    "Nombre",
+    "Estado financiero",
+    "Clasificación contable",
+    "Subgrupo",
+    "Naturaleza",
+    "Clasificación KPI",
+    "Motor MFA"
+  ],
+  "bancos": [
+    "Clave",
+    "Mes",
+    "Clas",
+    "TM",
+    "Póliza",
+    "Fecha",
+    "Categoría",
+    "Concepto",
+    "Cargo",
+    "Abono",
+    "Saldo"
+  ]
+}
