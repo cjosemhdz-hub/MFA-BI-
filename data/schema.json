@@ -1,0 +1,38 @@
+{
+  "diccionario": [
+    "Nivel",
+    "Cuenta",
+    "Nombre",
+    "Estado financiero",
+    "Clasificación contable",
+    "Subgrupo",
+    "Naturaleza",
+    "Clasificación KPI",
+    "Motor MFA"
+  ],
+  "balanza": [
+    "Nivel",
+    "Cuenta",
+    "Nombre",
+    "Saldo Inicial Deudor",
+    "Saldo Inicial Acreedor",
+    "Cargo",
+    "Abono",
+    "Saldo Final Deudor",
+    "Saldo Final Acreedor"
+  ],
+  "bancos": {
+    "movimientos_mxn": [
+      "Fecha",
+      "Concepto",
+      "Categoría",
+      "Cargo MXN",
+      "Abono MXN"
+    ],
+    "saldo_usd": [
+      "Saldo USD",
+      "Tipo de cambio",
+      "Saldo convertido MXN"
+    ]
+  }
+}
